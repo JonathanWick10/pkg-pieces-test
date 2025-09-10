@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "declaration": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "paths": {
+      "automation-shared-test": ["../node_modules/automation-shared-test/dist/index.d.ts"],
+      "automation-pieces-framework-test": ["../node_modules/automation-pieces-framework-test/dist/index.d.ts"],
+      "automation-pieces-common-test": ["../node_modules/automation-pieces-common-test/dist/index.d.ts"]
+    }
+  },
+  "include": ["src"]
+}
