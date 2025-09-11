@@ -1,6 +1,6 @@
 {
   "name": "automation-pieces-test",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "commonjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,6 +13,13 @@
     "prepublishOnly": "npm run clean && npm run build"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^2.0.15",
+    "@ai-sdk/azure": "^2.0.28",
+    "@ai-sdk/google": "^2.0.13",
+    "@ai-sdk/openai": "^2.0.28",
+    "@ai-sdk/provider": "^2.0.0",
+    "@ai-sdk/replicate": "^1.0.8",
+    "ai": "^5.0.40",
     "automation-pieces-common-test": "^0.1.0",
     "automation-pieces-framework-test": "^0.1.0",
     "automation-shared-test": "^0.1.0",
