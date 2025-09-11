@@ -8,3 +8,4 @@ export * as delay from './_vendor/pieces/community/delay/src';
 export * as schedule from './_vendor/pieces/community/schedule/src';
 export * as flowHelper from './_vendor/pieces/community/flow-helper/src';
 export * as store from './_vendor/pieces/community/store/src';
+export * as commonai from './_vendor/pieces/community/common-ai/src';
