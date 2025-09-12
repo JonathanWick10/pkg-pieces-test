@@ -2,8 +2,7 @@ import { BaseModelSchema, DiscriminatedUnion, SeekPage } from 'automation-shared
 import { Static, Type } from '@sinclair/typebox'
 
 
-export const AIProvider = Type.Object({
-    ...BaseModelSchema,
+const AIProviderData = Type.Object({
     config: Type.Object({
         apiKey: Type.String(),
         azureOpenAI: Type.Optional(Type.Object({
@@ -14,6 +13,7 @@ export const AIProvider = Type.Object({
     platformId: Type.String(),
 })
 
+export const AIProvider = Type.Composite([BaseModelSchema, AIProviderData])
 export type AIProvider = Static<typeof AIProvider>
 
 export const AIProviderWithoutSensitiveData = Type.Omit(AIProvider, ['config'])
@@ -73,8 +73,7 @@ export const AIUsageMetadata = DiscriminatedUnion('feature', [
 
 export type AIUsageMetadata = Static<typeof AIUsageMetadata>
 
-export const AIUsage = Type.Object({
-    ...BaseModelSchema,
+const AIUsageData = Type.Object({
     provider: Type.String({ minLength: 1 }),
     model: Type.String({ minLength: 1 }),
     cost: Type.Number({ minimum: 0 }),
@@ -83,6 +82,7 @@ export const AIUsage = Type.Object({
     metadata: AIUsageMetadata,
 })
 
+export const AIUsage = Type.Composite([BaseModelSchema, AIUsageData])
 export type AIUsage = Static<typeof AIUsage>
 
 export const ListAICreditsUsageRequest = Type.Object({
